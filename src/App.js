@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useEffect, useState } from "react";
+import axios from "axios";
+import { NewsContext, NewsContextProvider } from "./NewsContext";
+import News from "./components/News";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { Switch } from "react-router-dom";
+
+import DetailNews from "./DetailNews";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NewsContextProvider>
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<News />}></Route>
+          <Route path="/:title" exact element={<DetailNews />}></Route>
+        </Routes>
+      </Router>
+    </NewsContextProvider>
   );
 }
 

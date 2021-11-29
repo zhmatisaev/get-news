@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: inter;
+  width: 80%;
+  margin: 0 auto;
+  background: rgb(251, 254, 255);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.all__news {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.news {
+  max-width: 500px;
+  padding: 30px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.news__title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.head__text {
+  margin-top: 30px;
+}
+
+.news__desc {
+  padding-top: 10px;
+  line-height: 25px;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.news__author {
+  margin-right: 10px;
+  color: purple;
+}
+
+.news__published {
+  margin-right: 10px;
+}
+
+.news__source,
+.news__published {
+  display: inline-block;
+  margin-top: 10px;
+  color: rgb(122, 122, 122);
+} */
+
+* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+._container {
+  margin: auto, none;
+  width: 1300px;
+  background: rgb(157, 196, 206);
+}
+
+.news {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  margin-left: 120px;
+  padding: 15px;
+}
+.text {
+  margin-left: 450px;
   align-items: center;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 20px;
+}
+.head__text {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 750px;
+  padding: 30px;
+  background-color: rgb(226, 183, 183);
 }
 
-.App-link {
-  color: #61dafb;
+.load {
+  margin-left: 150px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 30px 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  background: rgb(244, 247, 248);
+}
+.news__title {
+  margin: auto none;
 }
