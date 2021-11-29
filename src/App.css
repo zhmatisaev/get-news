@@ -78,7 +78,6 @@ body {
   display: flex;
   justify-content: space-between;
   width: 1300px;
-  z-index: 3;
   margin-left: 120px;
   align-items: center;
   text-align: center;
