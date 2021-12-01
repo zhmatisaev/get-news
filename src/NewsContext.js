@@ -6,13 +6,18 @@ export const NewsContext = createContext();
 
 export const NewsContextProvider = (props) => {
   const [data, setData] = useState();
+  const [term, setTerm] = useState("everything");
+
   const [limit, setLimit] = useState(5);
 
-  const apiKey = "a1d2746119ee472695874c27c7c80a59";
+  //   const apiKey = "REACT_APP_NEWS_API_KEY";
 
   useEffect(() => {
     axios
-      .get(`https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${apiKey}`)
+      .get(
+        // `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${term}&api-key=${process.env.REACT_APP_NEWS_API_KEY}`
+        `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+      )
       .then((response) => setData(response.data))
       .catch((error) => console.log(error));
   }, []);

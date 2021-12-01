@@ -5,14 +5,12 @@ import { Button } from "@material-ui/core";
 
 function News(props) {
   const { data } = useContext(NewsContext);
-  const [query, setQuery] = React.useState();
   const [load, setLoad] = React.useState(5);
   console.log(data);
 
-  //   const a = data.articles.slice(0, load);
-  //   const loadMore = () => {
-  //     setLoad(load + load);
-  //   };
+  const loadMore = () => {
+    setLoad((prevValue) => prevValue + 5);
+  };
 
   React.useEffect(() => {
     setInterval(() => {
@@ -21,7 +19,6 @@ function News(props) {
   }, []);
 
   return (
-    // <div></div>
     <div className="container">
       <div className="text">
         <h1 className="head__text">News App </h1>
@@ -33,17 +30,26 @@ function News(props) {
         >
           Update news
         </Button>
+
+        {/* <input>search</input> */}
       </div>
 
       <div className="all__news">
         {data
-          ? data.articles.map((news, index) => (
-              <NewsArticle data={news} key={news.url} index={index} />
-            ))
+          ? data.articles
+              .slice(0, load)
+              .map((news, index) => (
+                <NewsArticle data={news} key={news.url} index={index} />
+              ))
           : "Loading"}
       </div>
       <div className="load">
-        <Button className="btn" variant="contained" color="primary">
+        <Button
+          onClick={() => loadMore()}
+          className="btn"
+          variant="contained"
+          color="primary"
+        >
           {" "}
           load more
         </Button>
