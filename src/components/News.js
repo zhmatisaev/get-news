@@ -21,7 +21,7 @@ function News(props) {
   return (
     <div className="container">
       <div className="text">
-        <h1 className="head__text">News App </h1>
+        <h1 className="head__text">Get News </h1>
         <Button
           className="btn"
           onClick={() => window.location.reload()}
@@ -46,7 +46,7 @@ function News(props) {
       <div className="load">
         <Button
           onClick={() => loadMore()}
-          className="btn"
+          className="btn-more"
           variant="contained"
           color="primary"
         >
